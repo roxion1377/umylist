@@ -2,8 +2,10 @@
 
 one:
   mylist_id: 
+  user_id: 
   smid: MyString
 
 two:
   mylist_id: 
+  user_id: 
   smid: MyString

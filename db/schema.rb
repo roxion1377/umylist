@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722135003) do
+ActiveRecord::Schema.define(version: 20130723105643) do
 
   create_table "movies", force: true do |t|
     t.integer  "mylist_id"
-    t.string   "smid"
+    t.integer  "user_id"
+    t.string   "sm_id"
+    t.string   "thread_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "movies", ["mylist_id"], name: "index_movies_on_mylist_id"
+  add_index "movies", ["user_id"], name: "index_movies_on_user_id"
 
   create_table "mylists", force: true do |t|
     t.integer  "user_id"

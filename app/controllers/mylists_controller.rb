@@ -6,7 +6,8 @@ class MylistsController < ApplicationController
   end
 
   def show
-    @movies = Movie.where(:mylist => params[:id])
+    @mylist = Mylist.find(params[:id])
+    @movies = Movie.where(:mylist_id => params[:id])
   end
 
   def new

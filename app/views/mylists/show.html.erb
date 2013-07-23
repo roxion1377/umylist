@@ -1,2 +1,6 @@
-<h1>Mylists#show</h1>
-<p>Find me in app/views/mylists/show.html.erb</p>
+<h1>Mylists#<%= @mylist.name %></h1>
+<% @movies.each do |m| %>
+  <div class="movie">
+    <p><a href="http://www.nicovideo.jp/watch/<%= m.smid %>"><%= m.smid %></a></p>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<div class="form">
+  <%= form_for @movie do |f| %>
+  <div class="context">
+    <%= f.label :mylist_id %>
+    <%= collection_select :movie, :mylist_id, User.find(current_user).mylists, :id, :name %>
+  </div>
+  <div class="context">
+    <%= f.label :smid %>
+    <%= f.text_field :smid %>
+  </div>
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
