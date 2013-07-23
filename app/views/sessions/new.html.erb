@@ -1,0 +1,17 @@
+<div id="sessions-new">
+  <div class="form">
+    <%= form_tag sessions_path do %>
+    <div class="username">
+      <%= label_tag :username %>
+      <%= text_field_tag :username %>
+    </div>
+    <div class="password">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="submit">
+      <%= submit_tag %>
+    </div>
+    <% end %>
+  </div>
+</div>

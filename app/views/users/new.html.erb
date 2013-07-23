@@ -1,0 +1,21 @@
+<div id="users-new">
+  <div class="form">
+    <%= form_for @user do |f| %>
+    <div class="username">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class="password">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="password_confirmation">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="submit">
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>

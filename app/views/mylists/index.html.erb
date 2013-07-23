@@ -1,0 +1,4 @@
+<h1>Mylists</h1>
+<% @mylists.each do |m| %>
+  <a href="/mylists/<%= m.id %>"><%= m.name %></a>
+<% end %>
