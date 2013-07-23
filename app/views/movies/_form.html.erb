@@ -5,8 +5,12 @@
     <%= collection_select :movie, :mylist_id, User.find(current_user).mylists, :id, :name %>
   </div>
   <div class="context">
-    <%= f.label :smid %>
-    <%= f.text_field :smid %>
+    <%= f.label :sm_id %>
+    <%= f.text_field :sm_id %>
+  </div>
+  <div class="context">
+    <%= f.label :thread_id %>
+    <%= f.text_field :thread_id %>
   </div>
   <div class="submit">
     <%= f.submit %>

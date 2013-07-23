@@ -4,15 +4,18 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
   def create
+    p params
     @movie = Movie.new(movie_params)
     @movie.user = current_user
-    @movie.save
-    respond_to do |format|
-      format.json { render json: @movie }
+    if @movie.save
+      render json: @movie
+    else
+      p @movie.errors
+      render "new"
     end
   end
   private
   def movie_params
-    params.require(:movie).permit(:mylist_id,:smid)
+    params.require(:movie).permit(:mylist_id,:sm_id,:thread_id)
   end
 end
