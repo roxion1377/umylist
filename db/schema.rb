@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723105643) do
+ActiveRecord::Schema.define(version: 20130725061233) do
+
+  create_table "apis", force: true do |t|
+    t.integer  "user_id"
+    t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apis", ["user_id"], name: "index_apis_on_user_id"
 
   create_table "movies", force: true do |t|
     t.integer  "mylist_id"

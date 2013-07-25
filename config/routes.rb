@@ -1,4 +1,5 @@
 UnlimitedMylist::Application.routes.draw do
+  get "apis/new"
   get "movies/new"
   get "mylists/index"
   get "mylists/show"

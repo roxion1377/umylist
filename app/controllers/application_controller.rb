@@ -4,10 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   private
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+#    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= Api.where(:key => params[:p]).first.user if params[:p]
   end
   def authorize
-    redirect_to signin_path if current_user.nil?
+#    redirect_to signin_path if current_user.nil?
   end
   helper_method :current_user
 end
