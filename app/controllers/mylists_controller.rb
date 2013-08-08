@@ -2,7 +2,7 @@ class MylistsController < ApplicationController
   before_action :authorize, only: [:rename,:new, :show, :create, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
   def index
-    @mylists = Mylist.where(:user_id => current_user)
+    @mylists = Mylist.select('mylists.*,count(mylist_id) as count').joins(:movies).group(:mylist_id).where(:user_id => current_user)
     respond_to do |format|
       format.html
       format.json {render json: @mylists}
